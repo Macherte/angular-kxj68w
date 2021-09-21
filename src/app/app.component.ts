@@ -9,6 +9,7 @@ import {
   retrievedBookList,
   addBook,
   removeBook,
+  addBookSuccess,
 } from './state/actions/book.action';
 import { GoogleBooksService } from './book-list/books.service';
 
@@ -32,7 +33,9 @@ export class AppComponent {
 
   onAdd(bookId) {
     //not destructured here
+    this.books$.subscribe((bookCollection$) => console.log(bookCollection$));
     this.store.dispatch(addBook(bookId));
+    this.store.dispatch(addBookSuccess());
   }
 
   onRemove(bookId) {

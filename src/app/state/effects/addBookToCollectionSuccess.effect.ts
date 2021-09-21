@@ -26,5 +26,7 @@ export class CollectionEffects {
     { dispatch: false }
   );
 
-  constructor(private actions$: Actions, private store: Store<AppState>) {}
+  constructor(private actions$: Actions, private store: Store<AppState>) {
+    console.log('asd');
+  }
 }
